@@ -1,3 +1,5 @@
+![erd](https://raw.githubusercontent.com/mix3/dbic-prefetch-sample/master/docs/er.png)
+
 ```
 $ carton install
 $ carton exec prove -lvr t
