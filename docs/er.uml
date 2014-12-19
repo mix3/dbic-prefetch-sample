@@ -1,0 +1,42 @@
+@startuml
+
+hide circle
+
+object user {
+    - id                PK_INTEGER
+    name              VARCHAR(size => 191)
+    current_ua_number INTEGER
+}
+
+object user_avatar {
+    - user_id         INTEGER
+    - number          INTEGER
+    current_uae_set INTEGER
+}
+
+object user_avatar_equipment_set {
+    - user_id     INTEGER
+    - number      INTEGER
+    head_uae_id INTEGER
+    body_uae_id INTEGER
+    leg_uae_id  INTEGER
+}
+
+object user_avatar_equipment {
+    - id         PK_BIGINT
+    user_id    INTEGER
+    ae_id      INTEGER
+    created_at DATETIME
+}
+
+object avatar_equipment {
+    - id   INTEGER
+    name VARCHAR(size => 191)
+}
+
+user_avatar -right-o user
+user_avatar_equipment_set -right-o user_avatar
+user_avatar_equipment -right-o user_avatar_equipment_set
+avatar_equipment -right-o user_avatar_equipment
+
+@enduml
